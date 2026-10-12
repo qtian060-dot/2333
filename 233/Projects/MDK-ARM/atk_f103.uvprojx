@@ -397,6 +397,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\User\main.c</FilePath>
             </File>
+            <File>
+              <FileName>cloud.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\cloud.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -436,6 +441,16 @@
               <FileName>remote.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\BSP\REMOTE\remote.c</FilePath>
+            </File>
+            <File>
+              <FileName>esp8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\BSP\ESP8266\esp8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>mqtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\BSP\ESP8266\mqtt.c</FilePath>
             </File>
             <File>
               <FileName>remote.h</FileName>
