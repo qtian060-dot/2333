@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>红外检测云控制台</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #0f1724; color: #e8eef7; min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; background: #16223a; border-bottom: 1px solid #24365c;
+  }
+  header h1 { font-size: 20px; font-weight: 600; }
+  header h1 span { color: #4da3ff; }
+  .badge {
+    display: inline-block; padding: 4px 14px; border-radius: 20px;
+    font-size: 13px; background: #2a3a5c; color: #8fa8d8;
+  }
+  .badge.on  { background: #113d2a; color: #3ddc84; }
+  .badge.off { background: #4a1d24; color: #ff6b7a; }
+  .upd { font-size: 12px; color: #6d84ab; margin-left: 12px; }
+  main { max-width: 980px; margin: 26px auto; padding: 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .card {
+    background: #16223a; border: 1px solid #24365c; border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .card .label { font-size: 13px; color: #6d84ab; margin-bottom: 8px; }
+  .card .value { font-size: 40px; font-weight: 700; color: #fff; line-height: 1.1; }
+  .card .value.small { font-size: 24px; }
+  .card .value.warn { color: #ffb547; }
+  .card .value.bad  { color: #ff6b7a; }
+  .card .value.good { color: #3ddc84; }
+  .panel {
+    margin-top: 16px; background: #16223a; border: 1px solid #24365c;
+    border-radius: 12px; padding: 20px;
+  }
+  .panel h2 { font-size: 15px; color: #8fa8d8; margin-bottom: 14px; font-weight: 600; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+  .row:last-child { margin-bottom: 0; }
+  button {
+    background: #1d4ed8; color: #fff; border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 14px; cursor: pointer; transition: background .15s;
+  }
+  button:hover { background: #2563eb; }
+  button:disabled { background: #2a3a5c; color: #6d84ab; cursor: not-allowed; }
+  button.danger { background: #b91c1c; }
+  button.danger:hover { background: #dc2626; }
+  button.toggle.on  { background: #15803d; }
+  button.toggle.off { background: #6b7280; }
+  input[type=number] {
+    width: 90px; background: #0f1724; color: #fff; border: 1px solid #24365c;
+    border-radius: 8px; padding: 9px 12px; font-size: 14px;
+  }
+  .desc { font-size: 12px; color: #6d84ab; }
+  #log {
+    margin-top: 16px; background: #0b1220; border: 1px solid #24365c; border-radius: 12px;
+    padding: 14px 16px; font-family: Consolas, monospace; font-size: 12px;
+    color: #7fd1a8; max-height: 180px; overflow-y: auto; white-space: pre-wrap;
+  }
+  .toast {
+    position: fixed; top: 18px; right: 18px; padding: 12px 20px; border-radius: 8px;
+    font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none;
+    background: #113d2a; color: #3ddc84; border: 1px solid #1e5c40;
+  }
+  .toast.show { opacity: 1; }
+  .toast.err { background: #4a1d24; color: #ff6b7a; border-color: #7a2d38; }
+</style>
+</head>
+<body>
+<header>
+  <h1>红外检测云控制台 <span>(OneNET)</span></h1>
+  <div>
+    <span class="badge off" id="onlineBadge">离线</span>
+    <span class="upd" id="updTime">--</span>
+  </div>
+</header>
+
+<main>
+  <div class="grid">
+    <div class="card">
+      <div class="label">当前检测计数 count</div>
+      <div class="value" id="vCount">--</div>
+    </div>
+    <div class="card">
+      <div class="label">报警阈值 alarm_value</div>
+      <div class="value warn" id="vThreshold">--</div>
+    </div>
+    <div class="card">
+      <div class="label">报警状态 alarm_state</div>
+      <div class="value small" id="vAlarm">--</div>
+    </div>
+    <div class="card">
+      <div class="label">LED 状态 led_state</div>
+      <div class="value small" id="vLed">--</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>远程指令</h2>
+    <div class="row">
+      <button class="toggle off" id="btnAlarm" onclick="toggleAlarm()">声光报警：关闭</button>
+      <span class="desc">下发 alarm_enable：0=关闭报警 1=启用报警</span>
+    </div>
+    <div class="row">
+      <button class="danger" id="btnReset" onclick="doReset()">一键清零</button>
+      <span class="desc">下发 count_reset=1，计数归零</span>
+    </div>
+    <div class="row">
+      <label class="desc" for="thresholdInput">修改报警阈值 (1~9999)：</label>
+      <input type="number" id="thresholdInput" min="1" max="9999" value="20">
+      <button id="btnThreshold" onclick="doThreshold()">应用</button>
+    </div>
+  </div>
+
+  <div id="log">等待数据…</div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+var REFRESH_MS = 3000;
+var alarmOn = true;
+
+function $(id) { return document.getElementById(id); }
+
+function logLine(msg) {
+  var el = $('log');
+  var t = new Date().toLocaleTimeString();
+  el.textContent += '[' + t + '] ' + msg + '\n';
+  while (el.textContent.split('\n').length > 80) {
+    el.textContent = el.textContent.split('\n').slice(-80).join('\n');
+  }
+  el.scrollTop = el.scrollHeight;
+}
+
+function toast(msg, isErr) {
+  var el = $('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (isErr ? ' err' : '');
+  clearTimeout(el._t);
+  el._t = setTimeout(function () { el.className = 'toast' + (isErr ? ' err' : ''); }, 2200);
+}
+
+function refresh() {
+  fetch('/api/props')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.error) { logLine('查询失败: ' + d.error); return; }
+      $('onlineBadge').textContent = d.online ? '在线' : '离线';
+      $('onlineBadge').className = 'badge ' + (d.online ? 'on' : 'off');
+      if (d.lastTime) {
+        $('updTime').textContent = '数据时间 ' + new Date(d.lastTime).toLocaleTimeString();
+      }
+      var p = d.properties || {};
+      if (p.count !== undefined)        $('vCount').textContent = p.count;
+      if (p.alarm_value !== undefined)  {
+        $('vThreshold').textContent = p.alarm_value;
+        $('thresholdInput').value = p.alarm_value;
+      }
+      if (p.alarm_state !== undefined) {
+        var a = $('vAlarm');
+        a.textContent = p.alarm_state ? '报警中' : '正常';
+        a.className = 'value small ' + (p.alarm_state ? 'bad' : 'good');
+      }
+      if (p.led_state !== undefined) {
+        var l = $('vLed');
+        l.textContent = p.led_state ? '亮' : '灭';
+        l.className = 'value small ' + (p.led_state ? 'bad' : 'good');
+      }
+      if (p.alarm_enable !== undefined) setAlarmUI(p.alarm_enable === 1);
+    })
+    .catch(function (e) { logLine('请求异常: ' + e.message); });
+}
+
+function setAlarmUI(on) {
+  alarmOn = on;
+  var b = $('btnAlarm');
+  b.textContent = '声光报警：' + (on ? '开启中' : '关闭中');
+  b.className = 'toggle ' + (on ? 'on' : 'off');
+}
+
+function sendProp(key, value, okMsg) {
+  fetch('/api/props', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ properties: (function () { var o = {}; o[key] = value; return o; })() })
+  })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.ok) { toast(okMsg); logLine('下发 ' + key + '=' + value + ' 成功'); }
+      else { toast('下发失败: ' + d.error, true); logLine('下发失败: ' + d.error); }
+    })
+    .catch(function (e) { toast('请求异常', true); logLine('请求异常: ' + e.message); });
+}
+
+function toggleAlarm() {
+  sendProp('alarm_enable', alarmOn ? 0 : 1, alarmOn ? '已关闭声光报警' : '已启用声光报警');
+}
+
+function doReset() {
+  sendProp('count_reset', 1, '清零指令已下发');
+}
+
+function doThreshold() {
+  var v = parseInt($('thresholdInput').value, 10);
+  if (!(v >= 1 && v <= 9999)) { toast('阈值需在 1~9999', true); return; }
+  sendProp('alarm_value', v, '阈值已设为 ' + v);
+}
+
+refresh();
+setInterval(refresh, REFRESH_MS);
+</script>
+</body>
+</html>
