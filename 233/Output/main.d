@@ -1,0 +1,16 @@
+..\..\output\main.o: ..\..\User\main.c
+..\..\output\main.o: ..\..\User\../Drivers/SYSTEM/sys/sys.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\core_cm3.h
+..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
+..\..\output\main.o: ..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h
+..\..\output\main.o: ..\..\User\../Drivers/SYSTEM/delay/delay.h
+..\..\output\main.o: ..\..\User\../Drivers/BSP/LED/led.h
+..\..\output\main.o: ..\..\User\../Drivers/BSP/LCD/lcd.h
+..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\main.o: ..\..\User\../Drivers/BSP/REMOTE/remote.h
+..\..\output\main.o: ..\..\User\../Drivers/BSP/key.h

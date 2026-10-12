@@ -1,0 +1,104 @@
+Dependencies for Project 'atk_f103', Target 'REMOTE': (DO NOT MODIFY !)
+F (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Source\Templates\arm\startup_stm32f103xe.s)(0x64ABA890)(--cpu Cortex-M3 -g --apcs=interwork -I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 514" --pd "STM32F10X_HD SETA 1"--list ..\..\output\startup_stm32f103xe.lst --xref -o ..\..\output\startup_stm32f103xe.o --depend ..\..\output\startup_stm32f103xe.d)
+F (..\..\User\main.c)(0x6A0EBA98)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+I (..\..\User\../Drivers/SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+I (..\..\User\../Drivers/SYSTEM/delay/delay.h)(0x64ABA890)
+I (..\..\User\../Drivers/BSP/LED/led.h)(0x64ABA890)
+I (..\..\User\../Drivers/BSP/LCD/lcd.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\..\User\../Drivers/BSP/REMOTE/remote.h)(0x64ABA890)
+I (..\..\User\../Drivers/BSP/key.h)(0x6A0EBA98)
+F (..\..\Drivers\SYSTEM\delay\delay.c)(0x65655D02)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\delay.o --omf_browse ..\..\output\delay.crf --depend ..\..\output\delay.d)
+I (..\..\Drivers\./SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/delay/delay.h)(0x64ABA890)
+F (..\..\Drivers\SYSTEM\sys\sys.c)(0x64ABA890)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\sys.o --omf_browse ..\..\output\sys.crf --depend ..\..\output\sys.d)
+I (..\..\Drivers\./SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+F (..\..\Drivers\SYSTEM\usart\usart.c)(0x64ABA890)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\usart.o --omf_browse ..\..\output\usart.crf --depend ..\..\output\usart.d)
+I (..\..\Drivers\./SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/usart/usart.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+F (..\..\Drivers\BSP\LED\led.c)(0x64ABA890)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\led.o --omf_browse ..\..\output\led.crf --depend ..\..\output\led.d)
+I (..\..\Drivers\./BSP/LED/led.h)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+F (..\..\Drivers\BSP\LCD\lcd.c)(0x64ABA890)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\lcd.o --omf_browse ..\..\output\lcd.crf --depend ..\..\output\lcd.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (..\..\Drivers\./BSP/LCD/lcd.h)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\./BSP/LCD/lcdfont.h)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/usart/usart.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\..\Drivers\./BSP/LCD/lcd_ex.c)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/delay/delay.h)(0x64ABA890)
+F (..\..\Drivers\BSP\REMOTE\remote.c)(0x6A0DB1CC)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\remote.o --omf_browse ..\..\output\remote.crf --depend ..\..\output\remote.d)
+I (..\..\Drivers\./BSP/REMOTE/remote.h)(0x64ABA890)
+I (..\..\Drivers\./SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+F (.\remote.h)(0x6A0DB1CE)()
+F (..\..\Drivers\BSP\key.c)(0x6A0EBA98)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I..\..\Drivers\CMSIS\Include -I..\..\Drivers -I..\..\User -I..\..\Middlewares -I..\..\Drivers\STM32F1xx_StdPeriph_Driver\inc -I..\..\Drivers\SYSTEM-I C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F103xE-o ..\..\output\key.o --omf_browse ..\..\output\key.crf --depend ..\..\output\key.d)
+I (..\..\Drivers\BSP\./key.h)(0x6A0EBA98)
+I (..\..\Drivers\BSP\./../SYSTEM/sys/sys.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f103xe.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\core_cm3.h)(0x64ABA890)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (..\..\Drivers\CMSIS\Include\cmsis_version.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Include\cmsis_armcc.h)(0x64ABA890)
+I (..\..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x64ABA890)
+I (..\..\Drivers\BSP\./../SYSTEM/delay/delay.h)(0x64ABA890)
+F (..\..\readme.txt)(0x64ABA890)()

@@ -1,0 +1,68 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: user user, th, LIC=JL28G-V4GV7-8TK3P-M4DT4-JHCE9-FV8GM
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DCM.DLL V1.13.1.0
+Target DLL:      CMSIS_AGDI.dll V1.21.0.0
+Dialog DLL:      TCM.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\atk_f103.uvprojx
+Project File Date:  05/20/2026
+
+<h2>Output:</h2>
+Rebuild target 'REMOTE'
+assembling startup_stm32f103xe.s...
+compiling main.c...
+..\..\User\main.c(61): warning:  #223-D: function "Remote_Init" declared implicitly
+  Remote_Init();
+..\..\User\main.c(120): warning:  #223-D: function "Remote_Scan" declared implicitly
+      if(Remote_Scan())
+..\..\User\main.c(122): warning:  #223-D: function "Remote_GetCount" declared implicitly
+          num = Remote_GetCount();
+..\..\User\main.c(154): warning:  #223-D: function "Remote_Clear" declared implicitly
+                      Remote_Clear();
+..\..\User\main.c(195): warning:  #223-D: function "Remote_Clear" declared implicitly
+          Remote_Clear();
+..\..\User\main.c: 5 warnings, 0 errors
+compiling delay.c...
+compiling sys.c...
+compiling usart.c...
+compiling led.c...
+compiling lcd.c...
+compiling remote.c...
+compiling key.c...
+..\..\Drivers\BSP\key.c(24): warning:  #61-D: integer operation result is out of range
+  GPIOA->CRH &= ~(0xF << 28);
+..\..\Drivers\BSP\key.c(25): warning:  #61-D: integer operation result is out of range
+  GPIOA->CRH |=  (0x8 << 28);
+..\..\Drivers\BSP\key.c(25): warning:  #68-D: integer conversion resulted in a change of sign
+  GPIOA->CRH |=  (0x8 << 28);
+..\..\Drivers\BSP\key.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=24972 RO-data=12536 RW-data=28 ZI-data=1340  
+FromELF: creating hex file...
+"..\..\Output\atk_f103.axf" - 0 Error(s), 8 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\红外计数实验1\Projects\MDK-ARM\RTE
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>
